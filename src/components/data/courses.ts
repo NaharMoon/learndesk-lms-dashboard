@@ -1,0 +1,38 @@
+export const courses = [
+  {
+    id: 1,
+    title: "Advanced React Patterns",
+    instructor: "Sarah Johnson",
+    students: 1240,
+    progress: 78,
+    status: "Published",
+    category: "Frontend",
+  },
+  {
+    id: 2,
+    title: "UI/UX Design Fundamentals",
+    instructor: "David Lee",
+    students: 860,
+    progress: 54,
+    status: "Draft",
+    category: "Design",
+  },
+  {
+    id: 3,
+    title: "Next.js for Production",
+    instructor: "Michael Brown",
+    students: 1430,
+    progress: 92,
+    status: "Published",
+    category: "Development",
+  },
+  {
+    id: 4,
+    title: "Database Architecture",
+    instructor: "Emily Davis",
+    students: 620,
+    progress: 39,
+    status: "In Review",
+    category: "Backend",
+  },
+];
