@@ -25,6 +25,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import CourseDialog from "./CourseDialog";
+import CourseSheet from "./CourseSheet";
 
 const CourseTable = () => {
   return (
@@ -114,9 +115,13 @@ const CourseTable = () => {
                       </DropdownMenuTrigger>
 
                       <DropdownMenuContent className="border-white/10 bg-slate-900 text-white">
-                        <DropdownMenuItem>
-                          View Details
-                        </DropdownMenuItem>
+                        <CourseSheet course={course}>
+                          <DropdownMenuItem
+                            onSelect={(e) => e.preventDefault()}
+                          >
+                            View Details
+                          </DropdownMenuItem>
+                        </CourseSheet>
 
                         <DropdownMenuItem>
                           Edit Course
