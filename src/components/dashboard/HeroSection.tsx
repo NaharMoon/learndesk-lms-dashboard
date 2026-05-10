@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
+import CourseDialog from "@/components/courses/CourseDialog";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
@@ -22,16 +24,17 @@ const HeroSection = () => {
         </div>
 
         <div className="flex flex-wrap gap-3">
-          <Button className="rounded-2xl bg-violet-500 hover:bg-violet-600">
-            Create Course
-          </Button>
+          <CourseDialog />
 
           <Button
+            asChild
             variant="secondary"
             className="rounded-2xl border border-white/10 bg-white/10 text-white hover:bg-white/20"
           >
-            Analytics
-            <ArrowUpRight className="ml-2 size-4" />
+            <Link href="/courses">
+              Analytics
+              <ArrowUpRight className="ml-2 size-4" />
+            </Link>
           </Button>
         </div>
       </div>
