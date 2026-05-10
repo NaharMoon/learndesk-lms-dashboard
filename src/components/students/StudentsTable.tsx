@@ -27,6 +27,9 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import StudentSheet from "./StudentSheet";
+import { toast } from "sonner";
+import MessageDialog from "./MessageDialog";
+import AddStudentDialog from "./AddStudentDialog";
 
 const StudentsTable = () => {
   return (
@@ -43,9 +46,7 @@ const StudentsTable = () => {
             </p>
           </div>
 
-          <Button className="bg-violet-500 hover:bg-violet-600">
-            Add Student
-          </Button>
+          <AddStudentDialog />
         </div>
 
         <div className="overflow-x-auto">
@@ -141,11 +142,18 @@ const StudentsTable = () => {
                           </DropdownMenuItem>
                         </StudentSheet>
 
-                        <DropdownMenuItem>
-                          Send Message
-                        </DropdownMenuItem>
+                        <MessageDialog student={student}>
+                          <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
+                            Send Message
+                          </DropdownMenuItem>
+                        </MessageDialog>
 
-                        <DropdownMenuItem className="text-red-400 focus:text-red-400">
+                        <DropdownMenuItem
+                          className="text-red-400 focus:text-red-400"
+                          onClick={() =>
+                            toast.warning(`${student.name} marked for review`)
+                          }
+                        >
                           Suspend
                         </DropdownMenuItem>
                       </DropdownMenuContent>

@@ -26,6 +26,7 @@ import {
 } from "@/components/ui/table";
 import CourseDialog from "./CourseDialog";
 import CourseSheet from "./CourseSheet";
+import { toast } from "sonner";
 
 const CourseTable = () => {
   return (
@@ -123,11 +124,24 @@ const CourseTable = () => {
                           </DropdownMenuItem>
                         </CourseSheet>
 
-                        <DropdownMenuItem>
-                          Edit Course
-                        </DropdownMenuItem>
+                        <CourseDialog
+                          mode="edit"
+                          course={{
+                            title: course.title,
+                            category: course.category,
+                          }}
+                        >
+                          <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
+                            Edit Course
+                          </DropdownMenuItem>
+                        </CourseDialog>
 
-                        <DropdownMenuItem className="text-red-400">
+                        <DropdownMenuItem
+                          className="text-red-400 focus:text-red-400"
+                          onClick={() =>
+                            toast.warning(`${course.title} moved to archive`)
+                          }
+                        >
                           Archive
                         </DropdownMenuItem>
                       </DropdownMenuContent>

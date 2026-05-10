@@ -9,14 +9,14 @@ interface AppShellProps {
 
 const AppShell = ({ children }: AppShellProps) => {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-slate-950 text-white">
-      <section className="mx-auto flex w-full max-w-7xl gap-6 px-4 py-5 lg:px-6">
+    <main className="h-screen overflow-hidden bg-slate-950 text-white">
+      <section className="mx-auto flex h-full w-full max-w-7xl gap-6 px-4 py-5 lg:px-6">
         <AppSidebar />
 
-        <div className="min-w-0 flex-1">
+        <div className="flex min-w-0 flex-1 flex-col">
           <Topbar />
 
-          <div className="mt-6 min-w-0">
+          <div className="mt-6 min-w-0 flex-1 overflow-y-auto pr-2 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/10">
             {children}
           </div>
         </div>

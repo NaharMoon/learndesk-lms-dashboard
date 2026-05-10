@@ -15,6 +15,14 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const navItems = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
@@ -26,7 +34,7 @@ const Topbar = () => {
   const pathname = usePathname();
 
   return (
-    <header className="flex flex-col gap-4 rounded-3xl border border-white/10 bg-white/10 px-4 py-4 backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:px-5">
+    <header className="flex gap-4 rounded-3xl border border-white/10 bg-white/10 px-4 py-4 backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:px-5">
       <div className="flex items-center gap-3">
         <Sheet>
           <SheetTrigger asChild>
@@ -60,11 +68,10 @@ const Topbar = () => {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`flex items-center gap-3 rounded-2xl px-4 py-3 text-sm transition ${
-                      isActive
-                        ? "bg-violet-500 text-white"
-                        : "text-slate-300 hover:bg-white/10 hover:text-white"
-                    }`}
+                    className={`flex items-center gap-3 rounded-2xl px-4 py-3 text-sm transition ${isActive
+                      ? "bg-violet-500 text-white"
+                      : "text-slate-300 hover:bg-white/10 hover:text-white"
+                      }`}
                   >
                     <item.icon className="size-5" />
                     {item.label}
@@ -86,13 +93,63 @@ const Topbar = () => {
       </div>
 
       <div className="flex items-center justify-between gap-3 sm:justify-end">
-        <Badge className="bg-violet-500 hover:bg-violet-500">
+        {/* <Badge className="bg-violet-500 hover:bg-violet-500">
           shadcn/ui
-        </Badge>
+        </Badge> */}
 
-        <button className="rounded-2xl bg-white/10 p-3 transition hover:bg-white/20">
+        {/* <button className="rounded-2xl bg-white/10 p-3 transition hover:bg-white/20">
           <Bell className="size-5" />
-        </button>
+        </button> */}
+
+        {/* bell button interactive */}
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <button className="relative rounded-2xl bg-white/10 p-3 transition hover:bg-white/20">
+              <Bell className="size-5" />
+
+              <span className="absolute right-2 top-2 size-2 rounded-full bg-violet-500 ring-2 ring-slate-900" />
+            </button>
+          </DropdownMenuTrigger>
+
+          <DropdownMenuContent
+            align="end"
+            className="w-72 border-white/10 bg-slate-950 text-white"
+          >
+            <DropdownMenuLabel>Notifications</DropdownMenuLabel>
+
+            <DropdownMenuSeparator className="bg-white/10" />
+
+            <DropdownMenuItem className="flex flex-col items-start gap-1 py-3">
+              <p className="text-sm font-medium">
+                New student enrolled
+              </p>
+
+              <span className="text-xs text-slate-400">
+                Emma Watson joined Advanced React Patterns
+              </span>
+            </DropdownMenuItem>
+
+            <DropdownMenuItem className="flex flex-col items-start gap-1 py-3">
+              <p className="text-sm font-medium">
+                Course updated
+              </p>
+
+              <span className="text-xs text-slate-400">
+                UI/UX Fundamentals draft was reviewed
+              </span>
+            </DropdownMenuItem>
+
+            <DropdownMenuItem className="flex flex-col items-start gap-1 py-3">
+              <p className="text-sm font-medium">
+                Assignment submitted
+              </p>
+
+              <span className="text-xs text-slate-400">
+                Michael Brown submitted final project
+              </span>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
 
         <Avatar>
           <AvatarFallback className="bg-violet-500 text-white">

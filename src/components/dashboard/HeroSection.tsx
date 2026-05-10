@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 
 import CourseDialog from "@/components/courses/CourseDialog";
 import { Button } from "@/components/ui/button";
+import AddStudentDialog from "../students/AddStudentDialog";
 
 const HeroSection = () => {
   return (
@@ -25,6 +26,7 @@ const HeroSection = () => {
 
         <div className="flex flex-wrap gap-3">
           <CourseDialog />
+          <AddStudentDialog />
 
           <Button
             asChild

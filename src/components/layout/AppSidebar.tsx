@@ -32,7 +32,7 @@ const AppSidebar = () => {
   const pathname = usePathname();
 
   return (
-    <aside className="hidden w-[260px] rounded-3xl border border-white/10 bg-white/10 p-5 backdrop-blur lg:block">
+    <aside className="hidden h-full w-[260px] shrink-0 rounded-3xl border border-white/10 bg-white/10 p-5 backdrop-blur lg:block">
       <div className="mb-8 flex items-center gap-3">
         <div className="flex size-11 items-center justify-center rounded-2xl bg-violet-500">
           <GraduationCap className="size-6" />
