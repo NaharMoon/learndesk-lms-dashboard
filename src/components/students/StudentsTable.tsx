@@ -26,6 +26,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import StudentSheet from "./StudentSheet";
 
 const StudentsTable = () => {
   return (
@@ -132,9 +133,13 @@ const StudentsTable = () => {
                       </DropdownMenuTrigger>
 
                       <DropdownMenuContent className="border-white/10 bg-slate-950 text-white">
-                        <DropdownMenuItem>
-                          View Profile
-                        </DropdownMenuItem>
+                        <StudentSheet student={student}>
+                          <DropdownMenuItem
+                            onSelect={(e) => e.preventDefault()}
+                          >
+                            View Profile
+                          </DropdownMenuItem>
+                        </StudentSheet>
 
                         <DropdownMenuItem>
                           Send Message
