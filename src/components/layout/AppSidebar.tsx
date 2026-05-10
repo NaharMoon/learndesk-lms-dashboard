@@ -59,7 +59,7 @@ const AppSidebar = () => {
               href={item.href}
               className={`flex items-center gap-3 rounded-2xl px-4 py-3 text-sm transition ${
                 isActive
-                  ? "bg-violet-500 text-white"
+                  ? "bg-violet-500 shadow-[0_0_20px_rgba(168,85,247,0.18)] text-white"
                   : "text-slate-300 hover:bg-white/10 hover:text-white"
               }`}
             >

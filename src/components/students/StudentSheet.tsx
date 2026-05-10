@@ -21,6 +21,31 @@ interface StudentSheetProps {
   children: React.ReactNode;
 }
 
+// progress color indicator
+const getProgressColor = (progress: number) => {
+  if (progress >= 80) return "bg-emerald-400";
+  if (progress >= 60) return "bg-sky-400";
+  if (progress >= 40) return "bg-amber-400";
+  return "bg-red-400";
+};
+
+// badge color
+const getStatusStyle = (status: string) => {
+  switch (status) {
+    case "Active":
+      return "bg-emerald-500/20 text-emerald-300 border border-emerald-500/20";
+
+    case "Pending":
+      return "bg-amber-500/20 text-amber-300 border border-amber-500/20";
+
+    case "Completed":
+      return "bg-sky-500/20 text-sky-300 border border-sky-500/20";
+
+    default:
+      return "bg-violet-500/20 text-violet-300 border border-violet-500/20";
+  }
+};
+
 const StudentSheet = ({ student, children }: StudentSheetProps) => {
   return (
     <Sheet>
@@ -68,7 +93,7 @@ const StudentSheet = ({ student, children }: StudentSheetProps) => {
                 </h3>
               </div>
 
-              <Badge className="bg-violet-500 hover:bg-violet-500">
+              <Badge className={getStatusStyle(student.status)}>
                 {student.status}
               </Badge>
             </div>
@@ -87,7 +112,11 @@ const StudentSheet = ({ student, children }: StudentSheetProps) => {
               </h3>
             </div>
 
-            <Progress value={student.progress} className="h-3" />
+            <Progress
+              value={student.progress}
+              className="h-2"
+              indicatorClassName={getProgressColor(student.progress)}
+            />
 
             <p className="mt-3 text-sm text-slate-400">
               {student.progress}% of the course completed

@@ -28,6 +28,32 @@ import CourseDialog from "./CourseDialog";
 import CourseSheet from "./CourseSheet";
 import { toast } from "sonner";
 
+// status badge color
+const getStatusStyle = (status: string) => {
+  switch (status) {
+    case "Published":
+      return "bg-emerald-500/20 text-emerald-300 border border-emerald-500/20";
+
+    case "Draft":
+      return "bg-slate-500/20 text-slate-300 border border-slate-500/20";
+
+    case "In Review":
+      return "bg-amber-500/20 text-amber-300 border border-amber-500/20";
+
+    case "Active":
+      return "bg-emerald-500/20 text-emerald-300 border border-emerald-500/20";
+
+    case "Pending":
+      return "bg-amber-500/20 text-amber-300 border border-amber-500/20";
+
+    case "Completed":
+      return "bg-sky-500/20 text-sky-300 border border-sky-500/20";
+
+    default:
+      return "bg-white/10 text-white border border-white/10";
+  }
+};
+
 const CourseTable = () => {
   return (
     <Card className="rounded-3xl border border-white/10 bg-white/10 text-white backdrop-blur">
@@ -75,7 +101,7 @@ const CourseTable = () => {
               {courses.map((course) => (
                 <TableRow
                   key={course.id}
-                  className="border-white/10"
+                  className="border-white/10 hover:bg-white/5"
                 >
                   <TableCell>
                     <div>
@@ -98,7 +124,7 @@ const CourseTable = () => {
                   </TableCell>
 
                   <TableCell>
-                    <Badge className="bg-violet-500 hover:bg-violet-500">
+                    <Badge className={getStatusStyle(course.status)}>
                       {course.status}
                     </Badge>
                   </TableCell>

@@ -7,7 +7,7 @@ import AddStudentDialog from "../students/AddStudentDialog";
 
 const HeroSection = () => {
   return (
-    <section className="overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-violet-500/20 via-slate-900 to-fuchsia-500/10 p-8 shadow-2xl">
+    <section className="overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-[#1e1b4b] via-[#3b0764] to-[#020617] p-8 shadow-2xl">
       <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-2xl">
           <p className="mb-3 text-sm font-medium text-violet-200">

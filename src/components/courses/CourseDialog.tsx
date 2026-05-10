@@ -56,7 +56,7 @@ const CourseDialog = ({
         {children ? (
           children
         ) : (
-          <Button className="rounded-2xl bg-violet-500 hover:bg-violet-600">
+          <Button className="rounded-2xl bg-violet-500 hover:bg-violet-600 hover:shadow-[0_0_20px_rgba(168,85,247,0.25)]">
             <Plus className="mr-2 size-4" />
             Create Course
           </Button>

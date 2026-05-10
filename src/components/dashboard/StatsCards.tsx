@@ -33,7 +33,11 @@ const StatsCards = () => {
       {stats.map((item) => (
         <Card
           key={item.title}
-          className="rounded-3xl border border-white/10 bg-white/10 text-white backdrop-blur"
+          className="
+          rounded-3xl border border-white/10 bg-white/10 hover:bg-violet-400/15 text-white backdrop-blur 
+          hover:border-violet-500/30
+          hover:shadow-[0_0_25px_rgba(168,85,247,0.08)]
+          transition-all duration-300"
         >
           <CardContent className="flex items-center justify-between p-6">
             <div>

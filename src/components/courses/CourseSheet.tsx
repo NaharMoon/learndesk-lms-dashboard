@@ -20,6 +20,40 @@ interface CourseSheetProps {
   children: React.ReactNode;
 }
 
+// progress color indicator
+const getProgressColor = (progress: number) => {
+  if (progress >= 80) return "bg-emerald-400";
+  if (progress >= 60) return "bg-sky-400";
+  if (progress >= 40) return "bg-amber-400";
+  return "bg-red-400";
+};
+// status badge color
+const getStatusStyle = (status: string) => {
+  switch (status) {
+    case "Published":
+      return "bg-emerald-500/20 text-emerald-300 border border-emerald-500/20";
+
+    case "Draft":
+      return "bg-slate-500/20 text-slate-300 border border-slate-500/20";
+
+    case "In Review":
+      return "bg-amber-500/20 text-amber-300 border border-amber-500/20";
+
+    case "Active":
+      return "bg-emerald-500/20 text-emerald-300 border border-emerald-500/20";
+
+    case "Pending":
+      return "bg-amber-500/20 text-amber-300 border border-amber-500/20";
+
+    case "Completed":
+      return "bg-sky-500/20 text-sky-300 border border-sky-500/20";
+
+    default:
+      return "bg-white/10 text-white border border-white/10";
+  }
+};
+
+
 const CourseSheet = ({
   course,
   children,
@@ -43,7 +77,7 @@ const CourseSheet = ({
 
         <div className="mt-8 space-y-6">
           <div className="flex flex-wrap gap-3">
-            <Badge className="bg-violet-500 hover:bg-violet-500">
+            <Badge className={getStatusStyle(course.status)}>
               {course.status}
             </Badge>
 
@@ -66,7 +100,8 @@ const CourseSheet = ({
 
             <Progress
               value={course.progress}
-              className="h-3"
+              className="h-2"
+              indicatorClassName={getProgressColor(course.progress)}
             />
 
             <p className="mt-3 text-sm text-slate-400">

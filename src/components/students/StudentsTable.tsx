@@ -31,6 +31,31 @@ import { toast } from "sonner";
 import MessageDialog from "./MessageDialog";
 import AddStudentDialog from "./AddStudentDialog";
 
+// progress indicatorClassName
+const getProgressColor = (progress: number) => {
+  if (progress >= 80) return "bg-emerald-400";
+  if (progress >= 60) return "bg-sky-400";
+  if (progress >= 40) return "bg-amber-400";
+  return "bg-red-400";
+};
+
+// badge color
+const getStatusStyle = (status: string) => {
+  switch (status) {
+    case "Active":
+      return "bg-emerald-500/20 text-emerald-300 border border-emerald-500/20";
+
+    case "Pending":
+      return "bg-amber-500/20 text-amber-300 border border-amber-500/20";
+
+    case "Completed":
+      return "bg-sky-500/20 text-sky-300 border border-sky-500/20";
+
+    default:
+      return "bg-violet-500/20 text-violet-300 border border-violet-500/20";
+  }
+};
+
 const StudentsTable = () => {
   return (
     <Card className="rounded-3xl border border-white/10 bg-white/10 text-white backdrop-blur">
@@ -107,7 +132,10 @@ const StudentsTable = () => {
 
                   <TableCell>
                     <div className="w-[140px] space-y-2">
-                      <Progress value={student.progress} />
+                      <Progress
+                        value={student.progress}
+                        indicatorClassName={getProgressColor(student.progress)}
+                      />
 
                       <p className="text-xs text-slate-400">
                         {student.progress}% completed
@@ -116,7 +144,7 @@ const StudentsTable = () => {
                   </TableCell>
 
                   <TableCell>
-                    <Badge className="bg-violet-500 hover:bg-violet-500">
+                    <Badge className={getStatusStyle(student.status)}>
                       {student.status}
                     </Badge>
                   </TableCell>
