@@ -24,6 +24,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import CourseDialog from "./CourseDialog";
 
 const CourseTable = () => {
   return (
@@ -39,10 +40,7 @@ const CourseTable = () => {
               Manage and monitor all courses
             </p>
           </div>
-
-          <Button className="rounded-2xl bg-violet-500 hover:bg-violet-600">
-            Create Course
-          </Button>
+          <CourseDialog />
         </div>
 
         <div className="w-full overflow-x-auto">
