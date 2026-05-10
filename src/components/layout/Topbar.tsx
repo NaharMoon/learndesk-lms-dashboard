@@ -41,7 +41,7 @@ const Topbar = () => {
 
           <SheetContent
             side="left"
-            className="border-white/10 bg-slate-950 text-white"
+            className="border-white/10 bg-slate-950 px-4 py-6 text-white sm:max-w-lg sm:px-6"
           >
             <SheetHeader>
               <SheetTitle className="flex items-center gap-3 text-white">

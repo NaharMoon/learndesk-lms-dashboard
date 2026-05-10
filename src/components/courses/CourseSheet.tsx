@@ -30,7 +30,7 @@ const CourseSheet = ({
         {children}
       </SheetTrigger>
 
-      <SheetContent className="border-white/10 bg-slate-950 text-white sm:max-w-lg">
+      <SheetContent className="border-white/10 bg-slate-950 px-4 py-6 text-white sm:max-w-lg sm:px-6">
         <SheetHeader>
           <SheetTitle className="text-white">
             {course.title}
