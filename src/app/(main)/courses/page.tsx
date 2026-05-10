@@ -1,8 +1,10 @@
+import CourseTable from "@/components/courses/CourseTable";
+
 const CoursesPage = () => {
   return (
-      <div>
-        Courses Page
-      </div>
+    <div className="space-y-6">
+      <CourseTable />
+    </div>
   );
 };
 
