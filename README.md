@@ -24,6 +24,22 @@ Designed with a premium UI approach using **glassmorphism effects, smooth intera
 
 ---
 
+# 🌐 Project Demo
+
+## 🔗 Live Site
+
+[View Live Site](https://learndesk-lms-dashboard.vercel.app)
+
+---
+
+# 📸 Preview
+
+project screenshots here.
+
+<!--[Dashboard Preview](./public/preview.png)-->
+
+---
+
 # 🛠️ Tech Stack
 
 ## Frontend
@@ -153,26 +169,6 @@ This project was built to practice and improve skills in:
 
 ---
 
-# 🌐 Live Demo
-
-## 🔗 Live Site
-
-```bash
-https://your-live-link.vercel.app
-```
-
----
-
-# 📸 Preview
-
-Add your project screenshots here.
-
-```md
-![Dashboard Preview](./public/preview.png)
-```
-
----
-
 # 🔮 Future Improvements
 
 - Authentication system
@@ -214,5 +210,3 @@ This project is open-source and available under the MIT License.
 - Portfolio: https://naharmoon-portfolio.netlify.app
 
 ---
-
-## ⭐ If you like this project, consider giving it a star on GitHub!
