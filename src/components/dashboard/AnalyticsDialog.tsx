@@ -72,7 +72,7 @@ const AnalyticsDialog = () => {
 
             <DialogContent className="border border-violet-500/20 bg-[#0f172a] text-white shadow-[0_0_80px_rgba(168,85,247,0.18)] sm:max-w-3xl p-5">
                 <DialogHeader>
-                    <DialogTitle className="flex items-center gap-2 text-2xl">
+                    <DialogTitle className="flex items-center gap-2 text-2xl mb-2">
                         <BarChart3 className="size-6 text-violet-400" />
                         <div>
                             <h1 className="text-2xl font-bold tracking-wide
@@ -81,9 +81,10 @@ const AnalyticsDialog = () => {
                             </h1>
                         </div>
                     </DialogTitle>
+                    <hr />
                 </DialogHeader>
 
-                <div className="space-y-6">
+                <div className="space-y-6 mt-4">
                     <div className="grid gap-4 md:grid-cols-3">
                         {stats.map((item) => {
                             const Icon = item.icon;
