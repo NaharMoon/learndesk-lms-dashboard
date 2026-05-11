@@ -77,7 +77,7 @@ const StudentsTable = () => {
 
         <div className="overflow-x-auto">
           <Table>
-            <TableHeader>
+            <TableHeader className="bg-violet-900/30">
               <TableRow className="border-white/10 hover:bg-transparent">
                 <TableHead className="text-slate-300">
                   Student
