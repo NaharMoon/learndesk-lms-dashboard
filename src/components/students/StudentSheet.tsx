@@ -56,13 +56,19 @@ const StudentSheet = ({ student, children }: StudentSheetProps) => {
       <SheetContent className="border-white/10 bg-slate-950 px-4 py-6 text-white sm:max-w-lg sm:px-6">
         <SheetHeader className="space-y-2 text-left">
           <SheetTitle className="text-white">
-            Student Profile
+            <div>
+              <h1 className="text-2xl font-bold tracking-wide
+                bg-gradient-to-r from-fuchsia-300 to-cyan-300 bg-clip-text text-transparent drop-shadow-[0_0_18px_rgba(168,85,247,0.35)]">
+                Student Profile
+              </h1>
+            </div>
           </SheetTitle>
 
-          <SheetDescription className="text-slate-400">
+          <SheetDescription className="text-slate-400 text-sm">
             Learning progress and enrollment details.
           </SheetDescription>
         </SheetHeader>
+        <hr />
 
         <div className="mt-6 space-y-6">
           <div className="flex items-center gap-4 rounded-3xl border border-white/10 bg-white/5 p-5">

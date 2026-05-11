@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { Bell, BookOpen, GraduationCap, LayoutDashboard, Menu, Search, Users } from "lucide-react";
 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -34,7 +33,7 @@ const Topbar = () => {
   const pathname = usePathname();
 
   return (
-    <header className="flex gap-4 rounded-3xl border border-white/10 bg-white/10 px-4 py-4 backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:px-5">
+    <header className="flex gap-4 rounded-xl border border-white/10 bg-white/10 px-4 py-2 backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:px-5">
       <div className="flex items-center gap-3">
         <Sheet>
           <SheetTrigger asChild>
@@ -53,13 +52,22 @@ const Topbar = () => {
           >
             <SheetHeader>
               <SheetTitle className="flex items-center gap-3 text-white">
-                <div className="flex size-10 items-center justify-center rounded-2xl bg-violet-500">
-                  <GraduationCap className="size-5" />
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-violet-500">
+                  <GraduationCap className="size-6" />
                 </div>
-                LearnDesk
+                <div>
+                  <h1 className="text-xl font-bold tracking-wide
+                    bg-gradient-to-r from-fuchsia-300 to-cyan-300 bg-clip-text text-transparent drop-shadow-[0_0_18px_rgba(168,85,247,0.35)]">
+                    LearnDesk
+                  </h1>
+
+                  <p className="text-xs text-slate-400">
+                    LMS Dashboard
+                  </p>
+                </div>
               </SheetTitle>
             </SheetHeader>
-
+            <hr />
             <nav className="mt-8 space-y-2">
               {navItems.map((item) => {
                 const isActive = pathname === item.href;
@@ -82,32 +90,25 @@ const Topbar = () => {
           </SheetContent>
         </Sheet>
 
-        <div className="relative w-full sm:w-80">
+        <div className="relative w-full lg:w-120 sm:w-80">
           <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-slate-400" />
 
           <Input
             placeholder="Search courses..."
-            className="border-white/10 bg-white/5 pl-10 text-white placeholder:text-slate-400"
+            className="border-white/10 bg-white/5 pl-10 py-5 text-white placeholder:text-slate-400"
           />
         </div>
       </div>
 
       <div className="flex items-center justify-between gap-3 sm:justify-end">
-        {/* <Badge className="bg-violet-500 hover:bg-violet-500">
-          shadcn/ui
-        </Badge> */}
-
-        {/* <button className="rounded-2xl bg-white/10 p-3 transition hover:bg-white/20">
-          <Bell className="size-5" />
-        </button> */}
 
         {/* bell button interactive */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <button className="relative rounded-2xl bg-white/10 p-3 transition hover:bg-white/20">
+            <button className="relative rounded-full bg-white/10 p-2.5 transition hover:bg-white/20">
               <Bell className="size-5" />
 
-              <span className="absolute right-2 top-2 size-2 rounded-full bg-violet-500 ring-2 ring-slate-900" />
+              <span className="absolute right-2.5 top-2.5 size-1.5 rounded-full bg-violet-500 ring-2 ring-slate-900" />
             </button>
           </DropdownMenuTrigger>
 

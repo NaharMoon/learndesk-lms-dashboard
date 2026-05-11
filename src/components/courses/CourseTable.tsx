@@ -60,7 +60,8 @@ const CourseTable = () => {
       <CardContent className="p-6">
         <div className="mb-6 flex items-center justify-between">
           <div>
-            <h2 className="text-2xl font-semibold">
+            <h2 className="font-heading text-3xl font-bold tracking-wide
+              bg-gradient-to-r from-fuchsia-300 to-cyan-300 bg-clip-text text-transparent drop-shadow-[0_0_18px_rgba(168,85,247,0.35)]">
               Course Management
             </h2>
 

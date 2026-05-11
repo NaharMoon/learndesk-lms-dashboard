@@ -67,14 +67,19 @@ const CourseSheet = ({
       <SheetContent className="border-white/10 bg-slate-950 px-4 py-6 text-white sm:max-w-lg sm:px-6">
         <SheetHeader>
           <SheetTitle className="text-white">
-            {course.title}
+            <div>
+              <h1 className="text-2xl font-bold tracking-wide
+                bg-gradient-to-r from-fuchsia-300 to-cyan-300 bg-clip-text text-transparent drop-shadow-[0_0_18px_rgba(168,85,247,0.35)]">
+                {course.title}
+              </h1>
+            </div>
           </SheetTitle>
 
-          <SheetDescription className="text-slate-400">
+          <SheetDescription className="text-slate-400 text-sm">
             Course performance overview and analytics.
           </SheetDescription>
         </SheetHeader>
-
+        <hr />
         <div className="mt-8 space-y-6">
           <div className="flex flex-wrap gap-3">
             <Badge className={getStatusStyle(course.status)}>

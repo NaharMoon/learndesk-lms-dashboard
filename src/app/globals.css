@@ -129,3 +129,19 @@
   }
 }
 
+body {
+  font-family: var(--font-inter), sans-serif;
+}
+.font-heading {
+  font-family: "Times New Roman", serif;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}

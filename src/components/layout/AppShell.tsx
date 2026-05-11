@@ -10,7 +10,7 @@ interface AppShellProps {
 const AppShell = ({ children }: AppShellProps) => {
   return (
     <main className="h-screen overflow-hidden bg-slate-950 text-white">
-      <section className="mx-auto flex h-full w-full max-w-7xl gap-6 px-4 py-5 lg:px-6">
+      <section className="mx-auto flex h-full w-full md:w-11/12 gap-10 px-4 py-5 lg:px-6">
         <AppSidebar />
 
         <div className="flex min-w-0 flex-1 flex-col">

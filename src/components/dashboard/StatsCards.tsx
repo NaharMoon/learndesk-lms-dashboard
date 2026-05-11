@@ -29,13 +29,13 @@ const stats = [
 
 const StatsCards = () => {
   return (
-    <section className="grid gap-4 md:grid-cols-3">
+    <section className="grid gap-6 md:grid-cols-3">
       {stats.map((item) => (
         <Card
           key={item.title}
           className="
-          rounded-3xl border border-white/10 bg-white/10 hover:bg-violet-400/15 text-white backdrop-blur 
-          hover:border-violet-500/30
+          rounded-3xl border border-white/10 text-white backdrop-blur 
+          hover:border-violet-500/30 bg-white/10 hover:bg-violet-400/10
           hover:shadow-[0_0_25px_rgba(168,85,247,0.08)]
           transition-all duration-300"
         >

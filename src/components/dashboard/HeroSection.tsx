@@ -1,43 +1,37 @@
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-
 import CourseDialog from "@/components/courses/CourseDialog";
-import { Button } from "@/components/ui/button";
 import AddStudentDialog from "../students/AddStudentDialog";
+import AnalyticsDialog from "./AnalyticsDialog";
+import { Badge } from "../ui/badge";
+import { LayoutDashboard } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-[#1e1b4b] via-[#3b0764] to-[#020617] p-8 shadow-2xl">
+    <section className="overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-[#1e1b4b] via-[#3b0764] to-[#020617] p-8 shadow-2xl mb-8">
       <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-2xl">
-          <p className="mb-3 text-sm font-medium text-violet-200">
+          <Badge className="bg-sky-500/20 text-sky-300 border border-sky-500/30 py-3">
+            <LayoutDashboard />
             Instructor Workspace
-          </p>
+          </Badge>
 
-          <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl">
-            Manage courses and students from one modern dashboard.
+          <h1 className="font-heading text-5xl font-bold tracking-tight md:text-6xl">
+            Empower modern learning with a{" "}
+            <span className="bg-gradient-to-r from-violet-200 via-fuchsia-300 to-cyan-300 bg-clip-text text-transparent drop-shadow-[0_0_18px_rgba(168,85,247,0.35)]">
+              smarter LMS workspace.
+            </span>
           </h1>
 
-          <p className="mt-5 text-base leading-7 text-slate-300">
-            LearnDesk is a modern LMS dashboard UI concept built with
-            Next.js, TypeScript, Tailwind CSS, and shadcn/ui components.
+          <p className="mt-7 text-base leading-7 text-slate-400">
+            Monitor student progress, manage courses, and explore analytics through an elegant instructor dashboard.
           </p>
         </div>
 
         <div className="flex flex-wrap gap-3">
-          <CourseDialog />
-          <AddStudentDialog />
 
-          <Button
-            asChild
-            variant="secondary"
-            className="rounded-2xl border border-white/10 bg-white/10 text-white hover:bg-white/20"
-          >
-            <Link href="/courses">
-              Analytics
-              <ArrowUpRight className="ml-2 size-4" />
-            </Link>
-          </Button>
+          <AnalyticsDialog />
+          <AddStudentDialog />
+          <CourseDialog />
+
         </div>
       </div>
     </section>
